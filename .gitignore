@@ -38,3 +38,7 @@ tempkey.rsa
 identityserver4_log.txt
 IdentityServer.db
 updateUI.ps1
+
+bin/
+obj/
+Migrations/
