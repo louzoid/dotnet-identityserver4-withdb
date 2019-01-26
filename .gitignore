@@ -34,6 +34,7 @@ msbuild.wrn
 .vs/
 web/tempkey.rsa
 
-indentityserver4_log.txt
+tempkey.rsa
+identityserver4_log.txt
 IdentityServer.db
 updateUI.ps1
