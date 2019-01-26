@@ -1,0 +1,27 @@
+service: identityserver4lambdaappv2
+
+provider:
+  name: aws
+  runtime: dotnetcore2.1
+  region: eu-west-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - ssm:GetParameter
+        - ssm:GetParameters
+        - ssm:GetParametersByPath
+        - ssm:PutParameter
+      Resource: "arn:aws:ssm:eu-west-2:317601977906:parameter/IdentityBrokerApp*"
+  # environment:
+  #   ASPNETCORE_ENVIRONMENT: Development
+
+package:
+  artifact: bin/release/netcoreapp2.1/deploy-package.zip
+
+functions:
+  api:
+    handler: identityserverEF::identityserverEF.LambdaEntryPoint::FunctionHandlerAsync
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
