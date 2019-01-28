@@ -23,5 +23,8 @@ functions:
     handler: identityserverEF::identityserverEF.LambdaEntryPoint::FunctionHandlerAsync
     events:
       - http:
+          path: /
+          method: GET
+      - http:
           path: /{proxy+}
           method: ANY
