@@ -44,6 +44,7 @@ namespace identityserverEF
             return WebHost.CreateDefaultBuilder(args)
                     .ConfigureAppConfiguration(builder =>
                     {
+                        // configure secrets/config store
                         builder.AddSystemsManager("/IdentityBrokerApp");
                     })
                     .UseStartup<Startup>()
