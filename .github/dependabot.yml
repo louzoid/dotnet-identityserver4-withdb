@@ -1,0 +1,36 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: Microsoft.EntityFrameworkCore.Sqlite
+    versions:
+    - 5.0.2
+    - 5.0.3
+    - 5.0.4
+  - dependency-name: Microsoft.EntityFrameworkCore.Tools
+    versions:
+    - 5.0.2
+    - 5.0.3
+    - 5.0.4
+  - dependency-name: Amazon.Lambda.Core
+    versions:
+    - 1.2.0
+  - dependency-name: Amazon.Lambda.Serialization.Json
+    versions:
+    - 1.8.0
+  - dependency-name: Amazon.AspNetCore.DataProtection.SSM
+    versions:
+    - 2.0.0
+  - dependency-name: Amazon.Extensions.Configuration.SystemsManager
+    versions:
+    - 2.0.0
+  - dependency-name: IdentityServer4.EntityFramework.Storage
+    versions:
+    - 4.1.1
+  - dependency-name: IdentityServer4.EntityFramework
+    versions:
+    - 4.1.1
